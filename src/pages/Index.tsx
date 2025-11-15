@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { 
-  Mail, Download, Linkedin, Github, Sun, Moon, ExternalLink, Code,
-  Brain, Cloud, Cpu, MapPin, Database, BarChart3, Wrench, Globe,
+import {
+  Mail, Download, Linkedin, Github, Sun, Moon, ExternalLink, Search, Code,
+  Brain, Cloud, Cpu, MapPin, Database, BarChart3, Wrench, Globe, Newspaper,
   MessageSquare, Users, Target, Award, Globe2, Phone
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -174,13 +174,73 @@ export default function Index() {
 
           <div className="grid md:grid-cols-2 gap-8">
             <ProjectCard
+              title="GeoAI Water Body Detection"
+              category="Deep Learning · Remote Sensing"
+              desc="U-Net-based semantic segmentation system for detecting water bodies from Sentinel-2 satellite imagery. Includes a TensorFlow-trained model, Tkinter desktop app, Streamlit web app, RGB overlay visualizations, and heatmap confidence mapping."
+              icon={Globe}
+              gradient="from-indigo-600 to-sky-600"
+              tech={[
+                "TensorFlow",
+                "Keras",
+                "U-Net",
+                "Streamlit",
+                "Tkinter",
+                "Python",
+                "Remote Sensing",
+                "GIS",
+              ]}
+              githubUrl="https://github.com/YassineElALAMI/Water-Segmentation-from-Sentinel-2-images-Using-TensorFlow-U-Net"
+              demoUrl="#"
+              dark={dark}
+            />
+            <ProjectCard
+              title="Arabic Search Engine"
+              category="NLP · Information Retrieval"
+              desc="A full-text search engine for Arabic documents using TF-IDF and Cosine Similarity. Features advanced preprocessing with the SAFAR_v2 library for Arabic stemming, normalization, and stopword removal. Built with Java, Maven, and integrated with Jython for morphological analysis."
+              icon={Search}
+              gradient="from-amber-600 to-rose-600"
+              tech={[
+                "Java",
+                "Maven",
+                "SAFAR_v2",
+                "Jython",
+                "TF-IDF",
+                "Cosine Similarity",
+                "NLP",
+                "Information Retrieval",
+              ]}
+              githubUrl="https://github.com/YassineElALAMI/Arabic-Search-Engine"
+              demoUrl="#"
+              dark={dark}
+            />
+            <ProjectCard
+              title="Voice of Morocco Web Scraper"
+              category="Web Scraping · Data Engineering"
+              desc="A full-scale automated Scrapy crawler that extracts news articles from TheVoice.ma, including titles, publication dates (Arabic format), images, videos, links, and full article text. Supports deep pagination (1–372), article-level parsing, item pipelines, structured data export, and date-range filtering."
+              icon={Newspaper}
+              gradient="from-emerald-600 to-teal-600"
+              tech={[
+                "Python",
+                "Scrapy",
+                "XPath / CSS Selectors",
+                "Web Automation",
+                "Data Extraction",
+                "JSON / CSV Pipelines",
+              ]}
+              githubUrl="https://github.com/YassineElALAMI/Voice-of-Morocco-Web-Scraper-Scrapy-Project-"
+              demoUrl="#"
+              dark={dark}
+            />
+
+
+            <ProjectCard
               title="Speech Gender and Digit Recognition"
               category="Deep Learning"
               desc="CNN model for real-time digit classification and gender detection with a Tkinter interface. Implements convolutional neural networks for audio processing and pattern recognition."
               icon={Brain}
               gradient="from-blue-600 to-cyan-600"
               tech={["TensorFlow", "Keras", "CNN", "Python", "Tkinter"]}
-              githubUrl="https://github.com/YassineElALAMI"
+              githubUrl="https://github.com/YassineElALAMI/Speech-Recognition-Model-for-Gender-Classification"
               demoUrl="#"
               dark={dark}
             />
@@ -191,7 +251,7 @@ export default function Index() {
               icon={Cloud}
               gradient="from-green-600 to-emerald-600"
               tech={["Scikit-learn", "Pandas", "ML", "Data Analysis"]}
-              githubUrl="https://github.com/YassineElALAMI"
+              githubUrl="https://github.com/YassineElALAMI/Air-Quality-Prediction-in-Moroccan-Cities"
               demoUrl="#"
               dark={dark}
             />
@@ -202,7 +262,7 @@ export default function Index() {
               icon={Cpu}
               gradient="from-purple-600 to-pink-600"
               tech={["Optimization", "Python", "Algorithms", "GA"]}
-              githubUrl="https://github.com/YassineElALAMI"
+              githubUrl="https://github.com/YassineElALAMI/Genetic-Algorithm-for-Job-Shop-Scheduling"
               demoUrl="#"
               dark={dark}
             />
@@ -213,7 +273,7 @@ export default function Index() {
               icon={MapPin}
               gradient="from-orange-600 to-red-600"
               tech={["Neo4j", "Python", "GIS", "Folium", "OpenStreetMap"]}
-              githubUrl="https://github.com/YassineElALAMI"
+              githubUrl="https://github.com/YassineElALAMI/GeoSpatial-Pharmacy-Finder"
               demoUrl="#"
               dark={dark}
             />
@@ -560,21 +620,21 @@ function ProjectCard({
               GitHub
             </a>
           </Button>
-          <Button size="sm" className="gap-2 flex-1 bg-blue-600 hover:bg-blue-700 text-white" asChild>
+          {/* <Button size="sm" className="gap-2 flex-1 bg-blue-600 hover:bg-blue-700 text-white" asChild>
             <a href={demoUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-4 w-4" />
               Demo
             </a>
-          </Button>
+          </Button> */}
         </div>
 
         {/* View Details (appears on hover) */}
-        <motion.div
+        {/* <motion.div
           className="flex items-center gap-2 text-sm font-medium text-blue-600 dark:text-blue-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300 mt-4"
         >
           <span>View Details</span>
           <ExternalLink className="w-4 h-4" />
-        </motion.div>
+        </motion.div> */}
       </div>
 
       {/* Decorative corner element */}
